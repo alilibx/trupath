@@ -32,7 +32,7 @@ Provide 5 personalized career recommendations for the U.S. job market. For each 
 
 Format each recommendation with HTML tags for better readability, using <strong> for emphasis and <ul> for lists where appropriate.`;
 
-      const messages = [
+      const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
       ];
@@ -42,7 +42,8 @@ Format each recommendation with HTML tags for better readability, using <strong>
         messages: messages,
       });
 
-      const recommendations = completion.choices[0].message.content.split('\n\n').filter(line => line.trim() !== '');
+      const content = completion.choices[0].message?.content || '';
+      const recommendations = content.split('\n\n').filter(line => line.trim() !== '');
 
       res.status(200).json({ 
         recommendations,
