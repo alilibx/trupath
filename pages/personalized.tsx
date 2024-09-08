@@ -58,7 +58,7 @@ const PersonalizedPath: NextPage = () => {
     setIsGenerating(true);
     setStep(4); // Move to the recommendation step immediately to show loading
     try {
-      const response = await axios.post('/api/generate-recommendations', {
+      const response = await axios.post('/api/generate', {
         formData,
         occupations
       });

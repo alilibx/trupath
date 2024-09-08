@@ -21,7 +21,7 @@ Interests: ${formData.interests}
 Skills: ${formData.skills}
 
 And considering the following occupation data:
-${occupations.slice(0, 10).map((occ: { occupation: any; entryLevelEducation: any; projectedGrowthRate: any; medianPayStart: any; medianPayEnd: any; }) => `${occ.occupation} (Education: ${occ.entryLevelEducation}, Growth: ${occ.projectedGrowthRate}, Median Pay: $${occ.medianPayStart}-${occ.medianPayEnd})`).join('\n')}
+${occupations.slice(0, 10).map((occ: { occupation: unknown; entryLevelEducation: unknown; projectedGrowthRate: unknown; medianPayStart: unknown; medianPayEnd: unknown; }) => `${occ.occupation} (Education: ${occ.entryLevelEducation}, Growth: ${occ.projectedGrowthRate}, Median Pay: $${occ.medianPayStart}-${occ.medianPayEnd})`).join('\n')}
 
 Provide 5 personalized career recommendations for the U.S. job market. For each recommendation:
 1. Explain why it's a good fit based on the user's information.
